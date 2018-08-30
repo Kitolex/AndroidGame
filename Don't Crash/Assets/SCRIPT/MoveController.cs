@@ -1,13 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
+
 
 public class MoveController : MonoBehaviour {
 
     public float vitesse;
     public float rotation;
 
+    public Button t;
+
     Rigidbody2D rb;
+    bool left = false;
+    bool right = false;
 
 	// Use this for initialization
 	void Start () {
@@ -19,10 +26,13 @@ public class MoveController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey(KeyCode.A))
+
+
+
+        if (left)
         {
             transform.Rotate(0, 0, rotation);
-        }else if (Input.GetKey(KeyCode.Z))
+        }else if (right)
         {
             transform.Rotate(0, 0, -rotation);
         }
@@ -33,4 +43,22 @@ public class MoveController : MonoBehaviour {
     {
         rb.velocity = transform.up * vitesse;
     }
+
+    public void RotateLeft()
+    {
+        left = true;
+    }
+
+    public void RotateRight()
+    {
+        right = true;
+    }
+
+    public void StopRotate()
+    {
+        left = false;
+        right = false;
+    }
+
+
 }
