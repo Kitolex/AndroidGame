@@ -15,9 +15,6 @@ public class GameManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        vaisseauJouable.gameObject.transform.position = posInit;
-        vaisseauJouable.gameObject.SetActive(true);
-        
 
     }
 	
@@ -26,30 +23,4 @@ public class GameManager : MonoBehaviour {
 		
 	}
 
-    public void arrive()
-    {
-        vaisseauJouable.gameObject.SetActive(false);
-        Debug.Log("WIN");
-        restart();
-    }
-
-    private void restart()
-    {
-        createGhost();
-        vaisseauJouable.gameObject.transform.position = posInit;
-        vaisseauJouable.gameObject.transform.forward = Vector3.zero;
-        vaisseauJouable.gameObject.SetActive(true);
-    }
-
-    private void createGhost()
-    {
-        OldVaisseau oV = Instantiate(oldVaisseau);
-        List<Vector3> listPos = vaisseauJouable.gameObject.GetComponent<MoveController>().getPosition();
-        List<Quaternion> listFor = vaisseauJouable.gameObject.GetComponent<MoveController>().getForward();
-        oV.gameObject.SetActive(true);
-        oV.setListPos(listPos);
-        oV.setlistFor(listFor);
-        oV.start();
-       
-    }
 }

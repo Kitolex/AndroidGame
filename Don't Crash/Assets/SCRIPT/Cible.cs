@@ -15,9 +15,10 @@ public class Cible : MonoBehaviour {
 	}
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+   /* private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("OnTriggerEnter2D");
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().arrive();
-    }
+        GameObject.FindGameObjectWithTag("Player").GetComponent<MoveController>().addInput();
+    }*/
 }
