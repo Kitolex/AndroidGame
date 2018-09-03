@@ -16,8 +16,9 @@ public class MoveController : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         etat = InputGame.none;
 
+
     }
-	
+
 
     private void FixedUpdate()
     {

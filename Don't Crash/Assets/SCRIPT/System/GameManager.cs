@@ -10,12 +10,12 @@ public class GameManager : MonoBehaviour {
   
 
     public VaisseauJouable vaisseauJouable;
-    public OldVaisseau oldVaisseau;
+    public GhostVaisseau ghostVaisseau;
 
 
     // Use this for initialization
     void Start () {
-
+        vaisseauJouable.transform.position = posInit;
     }
 	
 	// Update is called once per frame
@@ -23,4 +23,25 @@ public class GameManager : MonoBehaviour {
 		
 	}
 
+    /**
+    *
+    * Méthode quand le vaisseau arrive à une cible ou objectif
+    */
+    public void arriveObj()
+    {
+        vaisseauJouable.gameObject.SetActive(false);
+        createGhost();
+        vaisseauJouable.gameObject.transform.position = new Vector3(6, -16, 0);//TODO
+    }
+
+    private void createGhost()
+    {
+        GhostVaisseau gV = Instantiate(ghostVaisseau);
+        gV.name = "Ghost";
+        gV.transform.position = posInit;//TODO
+        gV.listInput = new List<InputGame>(vaisseauJouable.listInput);
+        gV.listTime = new List<float>(vaisseauJouable.listTime);
+        gV.gameObject.SetActive(true);
+
+    }
 }
