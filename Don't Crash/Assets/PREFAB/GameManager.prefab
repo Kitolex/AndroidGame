@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4991822117976206}
   - component: {fileID: 114062174885086524}
+  - component: {fileID: 114255341824864028}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -53,4 +54,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posInit: {x: 0, y: -13, z: 0}
   vaisseauJouable: {fileID: 0}
-  oldVaisseau: {fileID: 0}
+  ghostVaisseau: {fileID: 0}
+--- !u!114 &114255341824864028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1825218551580032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c970e5d741b4f44290ae47821a5bcba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

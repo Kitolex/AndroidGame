@@ -11,17 +11,22 @@ public class GameManager : MonoBehaviour {
 
     public VaisseauJouable vaisseauJouable;
     public GhostVaisseau ghostVaisseau;
+    private RecordVaisseauSystem rvs;
+
+
 
 
     // Use this for initialization
     void Start () {
         vaisseauJouable.transform.position = posInit;
+        rvs = GetComponent<RecordVaisseauSystem>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+
+
+    }
 
     /**
     *
@@ -29,9 +34,10 @@ public class GameManager : MonoBehaviour {
     */
     public void arriveObj()
     {
+        Debug.Log("touhe");
         vaisseauJouable.gameObject.SetActive(false);
         createGhost();
-        vaisseauJouable.gameObject.transform.position = new Vector3(6, -16, 0);//TODO
+        vaisseauJouable.gameObject.transform.position = new Vector3(6, -16, 0);//TODO*/
     }
 
     private void createGhost()
@@ -39,8 +45,7 @@ public class GameManager : MonoBehaviour {
         GhostVaisseau gV = Instantiate(ghostVaisseau);
         gV.name = "Ghost";
         gV.transform.position = posInit;//TODO
-        gV.listInput = new List<InputGame>(vaisseauJouable.listInput);
-        gV.listTime = new List<float>(vaisseauJouable.listTime);
+        gV.record= rvs.getRecord();
         gV.gameObject.SetActive(true);
 
     }
