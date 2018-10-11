@@ -25,6 +25,10 @@ public class GhostVaisseau : Vaisseau {
             transform.rotation = record.listState[i].rotation;
             i++;
         }
+        else
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     
