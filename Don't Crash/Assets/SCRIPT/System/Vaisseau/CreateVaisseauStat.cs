@@ -5,7 +5,7 @@ using UnityEditor;
 
 public class CreateVaisseauCar
 {
-    [MenuItem("Assets/Create/VaisseauStat")]
+    [MenuItem("Assets/Create/Donnees Jeu/VaisseauStat")]
     public static VaisseauStat Create()
     {
         VaisseauStat asset = ScriptableObject.CreateInstance<VaisseauStat>();

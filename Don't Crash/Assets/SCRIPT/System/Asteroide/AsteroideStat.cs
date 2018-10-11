@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class State
+public class AsteroideStat : ScriptableObject
 {
-    public Quaternion rotation;
-    public float vitesse;
+
+    public float cooefPert;
+
 }

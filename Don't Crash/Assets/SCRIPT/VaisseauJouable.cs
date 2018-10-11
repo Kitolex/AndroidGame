@@ -29,6 +29,7 @@ public class VaisseauJouable : Vaisseau
     {
         State s = new State();
         s.rotation = transform.rotation;
+        s.vitesse = moveController.getVitesse();
         recordSystem.addState(s);
     }
 
@@ -74,6 +75,14 @@ public class VaisseauJouable : Vaisseau
             other.gameObject.SetActive(false);
             gm.arriveObj();
         }
+
+        if (other.gameObject.tag.Equals("Asteroide"))
+        {
+            other.gameObject.SetActive(false);
+            moveController.updateVitesseVaisseauWithCoef(other.GetComponent<Asteroide>().stat.cooefPert);//si problème transformer ça en variable i et la tester en fixeupdate
+        }
+
+        
     }
 
 }

@@ -23,6 +23,7 @@ public class GhostVaisseau : Vaisseau {
         {
             
             transform.rotation = record.listState[i].rotation;
+            moveController.setNewVitesseVaisseau(record.listState[i].vitesse);
             i++;
         }
         else
